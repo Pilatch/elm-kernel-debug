@@ -15,6 +15,8 @@ Then you can edit those as you choose, and re-build them.
 
 Use `elm reactor` and navigate to [localhost:8000/index.html](http://localhost:8000/index.html) to investigate the compiled result.
 
+It builds the file in `app/src/Increment.elm` using the resources placed in the `0.19.0` folder by the build script.
+
 ## Watch for changes
 
     yarn install
