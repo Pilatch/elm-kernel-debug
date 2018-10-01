@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "watch": "chokidar 'hax/**/*.elm' 'hax/**/*.js' -c ./build.sh"
+  },
+  "name": "elm-kernel-debug",
+  "description": "debug Elm kernel thingies for good, not evil",
+  "main": "build.sh",
+  "repository": "git@github.com:Pilatch/elm-kernel-debug.git",
+  "private": true,
+  "devDependencies": {
+    "chokidar-cli": "^1.2.1"
+  }
+}
