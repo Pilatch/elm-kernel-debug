@@ -15,6 +15,8 @@ cd `dirname $0`
 here=`pwd`
 export ELM_HOME=$here
 
+[ ! -d hax ] && mkdir hax
+
 build() {
   local author_package=$1 # should be in the format author/package
   local repo=https://github.com/$author_package.git
@@ -32,9 +34,9 @@ build() {
   fi
 
   cd $author_package
-  local version=`cat elm.json | jq -e .version | tr -d '"'`
+  local version=$(node -e "console.log(require('./elm.json').version)")
   rm -rf ./elm-stuff
-  elm make --docs=documentation.json
+  npx elm make --docs=documentation.json
   cd $here
 
   local target_module=0.19.0/package/$author_package
@@ -45,7 +47,7 @@ build() {
 
   cd app
   rm -rf ./elm-stuff
-  elm make src/Increment.elm --output=../index.html --debug
+  npx elm make src/Increment.elm --output=../index.html --debug
   cd $here
 
   local number_of_versions=`ls $target_module | wc -w | tr -d '[:space:]'`

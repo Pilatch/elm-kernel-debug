@@ -3,15 +3,24 @@ elm-kernel-debug
 
 Compile kernel code and test it... for good, not evil.
 
+## Install
+
+```bash
+yarn
+```
+
 ## Usage
 
-Download a couple packages and put them in the `hax` folder so you can hack them locally.
-
-    ./build.sh elm/virtual-dom elm/browser
+```bash
+# Download a couple packages and put them in the `hax` folder so you can hack them locally.
+./build.sh elm/virtual-dom elm/browser
+```
 
 Then you can edit those as you choose, and re-build them.
 
-    ./build.sh
+```bash
+./build.sh
+```
 
 Use `elm reactor` and navigate to [localhost:8000/index.html](http://localhost:8000/index.html) to investigate the compiled result.
 
